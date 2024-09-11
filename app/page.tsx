@@ -1,4 +1,8 @@
 import Image from "next/image";
+import './styles/navbar.css'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import logo from './assets/logo.png'
+
 import {
   Accordion,
   AccordionContent,
@@ -19,9 +23,30 @@ import {
 export default function Home() {
   return (
     <div className="center">
+      <div className="logo">
+        <Avatar>
+          <AvatarImage src = {logo} />
+          <AvatarFallback>logo</AvatarFallback>
+        </Avatar>
+
+        <h1>Stream</h1>
+      </div>
       <Menubar>
         <MenubarMenu>
-          <MenubarTrigger>Contact Us</MenubarTrigger>
+          <MenubarTrigger className="hover-options">Home</MenubarTrigger>
+        </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger className="hover-options">Stream</MenubarTrigger>
+        </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger className="hover-options">Pricing</MenubarTrigger>
+        </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger className="hover-options">Blog</MenubarTrigger>
+        </MenubarMenu>
+
+        <MenubarMenu>
+          <MenubarTrigger className="hover-options">Contact Us</MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
               X<MenubarShortcut>⌘T</MenubarShortcut>
@@ -33,16 +58,12 @@ export default function Home() {
             <MenubarItem>WhatsApp</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
+
       </Menubar>
 
-      {/*<Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Is it accessible?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>*/}
+      <div className="get-started">
+        <h4>Get Started Now</h4>
+      </div>
     </div>
 
   );
