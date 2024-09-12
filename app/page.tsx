@@ -1,7 +1,9 @@
+'use client'
 import Image from "next/image";
 import './styles/navbar.css'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import logo from './assets/logo.png'
+import {DrawerDialogDemo} from '../components/ui/elements/login'
 
 import {
   Accordion,
@@ -19,16 +21,25 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar"
 
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+
+import { Button } from "@/components/ui/button"
+
+import { Separator } from "@/components/ui/separator"
 
 export default function Home() {
   return (
     <div className="center">
       <div className="logo">
-        <Avatar>
-          <AvatarImage src = {logo} />
-          <AvatarFallback>logo</AvatarFallback>
-        </Avatar>
-
         <h1>Stream</h1>
       </div>
       <Menubar>
@@ -62,8 +73,9 @@ export default function Home() {
       </Menubar>
 
       <div className="get-started">
-        <h4>Get Started Now</h4>
+        
       </div>
+    <DrawerDialogDemo/>
     </div>
 
   );
